@@ -1,8 +1,9 @@
-API course for API sec university
+# API course for API sec university
+Note** incase if lab stop working use diffrent options.
 
 
-													LAB SETUP
-start burp:
+#													LAB SETUP
+## start burp:
 - Go to bwapp store and instal autorize (install it's dependices)
 - Foxyproxy installation to mozilla
 - make a proxy for burp and postman on port 8080 and 5555 respictively
@@ -20,53 +21,87 @@ start burp:
 - setup crAPI and vAPI
 
 
-													API Recon
+#													API Recon
 
-Public api is ment to found in ads of api provider.
-For public api end user is given manual hoe to use that api.
-Look in sign in page in web portal for finding api.
-HTTPO req and response header.
-JSON and XML is good indicator for api.
+- Public api is ment to found in ads of api provider.
+- For public api end user is given manual hoe to use that api.
+- Look in sign in page in web portal for finding api.
+- HTTPO req and response header.
+- JSON and XML is good indicator for api.
 
-PASSIVE Recon
+# PASSIVE Recon
 
-API documentation can tell us how to test api.
+- API documentation can tell us how to test api.
 
-- google dorks
+## google dorks
 
-intitle:"api" site:"google.com"
-inurl:"/api/v1" site:"microsoft.com"
-intitle:json site:ebay.com
+- intitle:"api" site:"google.com"
+- inurl:"/api/v1" site:"microsoft.com"
+- intitle:json site:ebay.com
 
-- Use github dork
+## Use github dork
 
-extension:json nasa
-"authorization: Bearer"
-filename:swagger.json
+- extension:json nasa
+- "authorization: Bearer"
+- filename:swagger.json
 
-- Shodan
+## Shodan
 
-coinbase port:443
-"content-type: application/json"
-"wp-json"
+- coinbase port:443
+- "content-type: application/json"
+- "wp-json"
 
-- wayback machine
+## wayback machine
 
-just use it 
+- just use it 
 
 <!-- left from active reconniance -->
 
-Active recon
+# Active recon
 
-- run nmap on our target
-- amass
-amass enmum -list
-amass enum -active -d crapi.apisec.ai
-amass enum -active -d microsoft.com | grep api
-- run directory brute forcing with gobuster
-gobuster dir -u http://127.0.0.1:8888 -w /usr/share/wordlists/dirbuster/... -b 200
-gobuster dir -u http://127.0.0.1:8888 -w /usr/share/wordlists/dirbuster/... 
-gobuster dir -u http://127.0.0.1:8888/workshop -w /usr/share/wordlists/dirbuster/... 
-- use dev tools in browser (network tab)
+## run nmap on our target
+## amass
+- amass enmum -list
+- amass enum -active -d crapi.apisec.ai
+- amass enum -active -d microsoft.com | grep api
+## run directory brute forcing with gobuster
+- gobuster dir -u http://127.0.0.1:8888 -w /usr/share/wordlists/dirbuster/... -b 200
+- gobuster dir -u http://127.0.0.1:8888 -w /usr/share/wordlists/dirbuster/... 
+- gobuster dir -u http://127.0.0.1:8888/workshop -w /usr/share/wordlists/dirbuster/... 
+### use dev tools in browser (network tab)
+### In network capture form network section search for api, also see for auth token
+### To intract that request form postman we need to copy that request form browser as cURL.
+### Then import that request in postman.(Import it as raw text)
+
+# Endpoint analysis
+## Reverse Engineering API
+- If API is not documented we need to build up our own collection.
+- There are two process of it.
+
+1. Using Postman to build our collection.
+- Make a proxy collection with enabling proxy in postman.
+- After enabling proxy with specified port 5555 and then tuen on proxy in web browser as foxyproxy and good to go.
+- Then nagivate around and do stuff and capture all request.
+- After doint all stuffs stop the capture.
+- Select all api releted request and differ it.
+- Organise it with folder.
+
+2. Using mitmweb
+- Start mitmweb form terminal. 
+- change the proxy to 8080. 
+- Do all the stuff and see the capture. 
+- Save all that capture. 
+- Then use swagger.
+sudo mitmproxy2swagger -i /path/to/file -o output.yml -p http://crapi.apisec.ai -f filename(here flow) 
+- Output file will be created see that file.
+- Remove ignore text form api requests form file, yaml file.
+- Save the file and then run that exat same command one more time. (can use --examples at end)
+- then use editor.swagger.io to smilpify that output file.
+- At this stage we can find vurnebility like exesive data expsore.
+- we can also import this in postman
+- And boom after adding we see that it's well managed.
+- boi we get it it's done.
+
+<!-- levt form vurne..  -->
 
 
