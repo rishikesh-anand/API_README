@@ -105,4 +105,9 @@ sudo mitmproxy2swagger -i /path/to/file -o output.yml -p http://crapi.apisec.ai 
 <!-- levt form vurne..  -->
 <!-- Fix the import error in postman -->
 
+# Finding exessive data exposure during endpoint analysis
+- Review the documentation.
+- We can replace id.
+- 
+
 
