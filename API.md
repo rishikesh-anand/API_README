@@ -126,6 +126,25 @@ Note** if an file is not inporting import the folder
 - After forwarding request in burp send that to reperter.
 - And boom exessive data exposure, we found it.
 
+# Finding Security misconf
+- Scan the target with nikto.
+`nikto -h crapi.apisec.ai`
+- Finded 3 vurnibility in there.
+- Scan with zap
+`zaproxy`
+- Enter the targer in GUI.
+- Start the automatic scan.
+- Save the scan.
+- Import openapi ... and in that select the output ymal file from swagger
+
+## manual scan
+- Use manual explore in zap.
+- Enable the HUD.
+- Then launch browser
+- In browser do all things form signup to buying all things again.
+- Boom scan is compleate.
+
+
 
 
 
