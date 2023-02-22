@@ -143,6 +143,7 @@ Note** if an file is not inporting import the folder
 - Then launch browser
 - In browser do all things form signup to buying all things again.
 - Boom scan is compleate.
+- To check for false positive see the request and reasponse in context of this. See the timestamps.
 
 
 
