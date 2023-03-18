@@ -145,9 +145,27 @@ Note** if an file is not inporting import the folder
 - Boom scan is compleate.
 - To check for false positive see the request and reasponse in context of this. See the timestamps.
 
+# Classic Authentication attack
 
+## Bruteforce using burp
+- We can use burp suite here for password sparying using intruder.
+- intersept login request in burp 
+- send it to Intruder
+- Select email press add
+- Select password press add
+- Go to payload page
+- select payload set 1 add emails there
+- select payload set 2 add passwords there and start attack
 
+for more
+- Payload processing > add rule
+- encode 
+- base64
+- click attack and click repeate
 
-
-
+## Using wfuzz for fuzzing api
+- lunch crapi homelab
+- `wfuzz -d '{"email":"anand@email.com","password":"Password"}' -H 'Content-Type: application/json' -z file,/usr/share/wordlists/rockyou.txt -u http://127.0.0.1/identity/api/auth/login`
+- `wfuzz -d '{"email":"anand@email.com","password":"Password"}' -H 'Content-Type: application/json' -z file,/usr/share/wordlists/rockyou.txt -u http://127.0.0.1/identity/api/auth/login --hc 500`
+- the above --hc 500 means hide code 500 here if response code is 500 hide it means only show 200 ok code(here)
 
