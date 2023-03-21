@@ -80,7 +80,7 @@ Note** incase if lab stop working use diffrent options.
 
 1. Using Postman to build our collection.
 - Make a proxy collection with enabling proxy in postman.
-- After enabling proxy with specified port 5555 and then tuen on proxy in web browser as foxyproxy and good to go.
+- After enabling proxy with specified port 5555 and then turn on proxy in web browser as foxyproxy and good to go.
 - Then nagivate around and do stuff and capture all request.
 - After doint all stuffs stop the capture.
 - Select all api releted request and differ it.
@@ -169,3 +169,13 @@ for more
 - `wfuzz -d '{"email":"anand@email.com","password":"Password"}' -H 'Content-Type: application/json' -z file,/usr/share/wordlists/rockyou.txt -u http://127.0.0.1/identity/api/auth/login --hc 500`
 - the above --hc 500 means hide code 500 here if response code is 500 hide it means only show 200 ok code(here)
 
+## API token attack
+- Start postman 
+- Update the bearer token
+- setup proxy to proxy through burp
+- sent login request through burp
+- send that request to sequenser
+- in burp -> Costum location configure select bearer token highlight it, click ok
+- Start live capture
+- It will send 20000 request
+- then analyse it
