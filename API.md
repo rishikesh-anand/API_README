@@ -179,3 +179,19 @@ for more
 - Start live capture
 - It will send 20000 request
 - then analyse it
+- For analysing view difftent tabs llike character level analysis.
+- Now get some bad token swaech for that in git you wil find some (https://raw.githubusercontent.com/hAPI-hacker/Hacking-APIs/    main/bad_tokens)
+- then in burp sequencer > manual load locate that badtkoen file or paste it.
+- we can see in tokens mainly last three characters are updated so that is a vurnibility.
+- we find it using burp.
+- here token's complexity is checked.
+- lets try to brute force the tokens.
+- capture login requesr send it to intruder.
+- copy any bad token paste that token in replacement of password for request.
+- in last three place add attack position by clicking on add.
+- change attack type to cluster bomb and payload to bruteforce
+- as per we know the number is lowercase single digit so set min max lenght to one and payload to a-z.
+- payload set change to 2.
+- so here second position is a character so payload type bruteforce min max 1 and a-z.
+- payload set 3 we know its number so just 0-9 there ane min max is 1, and lunch the attack.
+- 
