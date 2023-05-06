@@ -201,4 +201,15 @@ for more
 - then use `jwt_tool -t http://127.0.0.1/dashboard -rh "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgxODMwNjY0LCJleHAiOjE2ODI0MzU0NjR9.BjhOdsen5Y3Fnx2FyoO0rVoxMJ-RouFGxeJND1k20ZB01IJP1GfEvzId5mdhZDo8CtwDmZCgGFh9611LKNUlTIUqNnOs-l-IVmMdhE6qqEx0MQmNoekNeKFyaOodLkuz2dDHxk9CtQh-YFvbGq6LepQCxiyBkGASVXax9yD1HMBtsxiv-7REwQIV-lgLWGUSasnGO6c92emlPtBW-QaZflDT_eq7b9BozdFY_f5uFgUKdWl7J-q_vrnBiCuCHdPah-KvFeITbOE-Nb2AOMw-EIyjT5ccQE6cgQ0m2GQR3w_k7D0GOj6yIlfuHhr-21yOj3EWD5jSXoCA-RN3xp5TFQ" -M pb`
 - then for making new token `jwt_tool eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgxODMwNjY0LCJleHAiOjE2ODI0MzU0NjR9.BjhOdsen5Y3Fnx2FyoO0rVoxMJ-RouFGxeJND1k20ZB01IJP1GfEvzId5mdhZDo8CtwDmZCgGFh9611LKNUlTIUqNnOs-l-IVmMdhE6qqEx0MQmNoekNeKFyaOodLkuz2dDHxk9CtQh-YFvbGq6LepQCxiyBkGASVXax9yD1HMBtsxiv-7REwQIV-lgLWGUSasnGO6c92emlPtBW-QaZflDT_eq7b9BozdFY_f5uFgUKdWl7J-q_vrnBiCuCHdPah-KvFeITbOE-Nb2AOMw-EIyjT5ccQE6cgQ0m2GQR3w_k7D0GOj6yIlfuHhr-21yOj3EWD5jSXoCA-RN3xp5TFQ -X a`
 - this will generate new token which will only work in JWT (token ends with .)
-- 
+
+
+# Exploting api auth
+- BOLA - This is the ability of user A to see bank account balance of user B.
+- BFLA - Ability of user A to transfer fund form user B's account, back to user A's account
+
+# BOLA
+- For successful exploitation we need three things
+1. Resource ID
+2. Request that access resource 
+3. Missing or flawed access control
+
